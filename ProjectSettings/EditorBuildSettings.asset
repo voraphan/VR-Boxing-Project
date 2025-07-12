@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Manu.unity
+    guid: f293ade5ae882c441a5f93bca8d4cc80
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Scene1.unity
+    guid: 69bb91ad2334d5849ae817a6d30c2de3
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Manu1.unity
+    guid: f198556e13b88624ca74facf379e7c54
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Easy1.unity
+    guid: 337a82da1d0ce824b8de5004c25a2ada
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Normal1.unity
+    guid: b25a094d1f704aa4c825cca68914f5dc
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Hard1.unity
+    guid: b3b0dea4a3e1dc247aaad92490c9808e
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Scene2.unity
+    guid: b1d67297a1bbcd74887b2ad8a372559e
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Manu2.unity
+    guid: d7a9b70ca48947a41b7e6068dad9542b
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Easy2.unity
+    guid: c8795e025e5130d49a84f12e9777da4e
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Normal2.unity
+    guid: b0bf77ab542a276438dc603b8e232815
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Hard2.unity
+    guid: f00d253be2f72f747b4e7ec86d5ae645
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Scene3.unity
+    guid: 3df4e52aef7ca3644bb23775952bb596
+  - enabled: 1
+    path: Assets/Scenes/ChangeScene/Scene3 1.unity
+    guid: 2c219d23dae62684a980aebabac83ce6
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ed72be55522c8448bae8b0d66fa21adf, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b53b89ca9241447b0a56ff61fa931615, type: 2}
