@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChangeScene/Manu1.unity
     guid: f198556e13b88624ca74facf379e7c54
   - enabled: 1
-    path: Assets/Scenes/ChangeScene/Easy1.unity
+    path: Assets/Scenes/ChangeScene/Easy.unity
     guid: 337a82da1d0ce824b8de5004c25a2ada
   - enabled: 1
     path: Assets/Scenes/ChangeScene/Normal1.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChangeScene/Easy2.unity
     guid: c8795e025e5130d49a84f12e9777da4e
   - enabled: 1
-    path: Assets/Scenes/ChangeScene/Normal2.unity
+    path: Assets/Scenes/ChangeScene/Normal.unity
     guid: b0bf77ab542a276438dc603b8e232815
   - enabled: 1
     path: Assets/Scenes/ChangeScene/Hard2.unity

@@ -10,12 +10,12 @@ public class ButtonObject : MonoBehaviour
     [SerializeField] private float moveTime = 0.1f; 
 
     private Vector3 _originalPosition;
-    [SerializeField] private string sceneName;
+    [SerializeField] private Difficulty thisDifficulty;
     [SerializeField] private TMPro.TextMeshPro _textMeshPro;
     private void Start()
     {
         _originalPosition = transform.localPosition;
-        _textMeshPro.text = sceneName;
+        _textMeshPro.text = thisDifficulty.ToString();
     }
 
 
@@ -32,7 +32,9 @@ public class ButtonObject : MonoBehaviour
 
         yield return MoveOverTime(_originalPosition);
 
-        SceneManager.LoadScene(sceneName);
+        string sceneToLoad = $"{thisDifficulty}";
+        StageProgressManager.Instance.SetCurrentStage(thisDifficulty,0);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private IEnumerator MoveOverTime(Vector3 target)
