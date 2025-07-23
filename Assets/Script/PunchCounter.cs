@@ -6,21 +6,23 @@ using UnityEngine.SceneManagement;
 public class PunchCounter : MonoBehaviour
 {
     private bool isTrainingEnded = false;
-    public int targetPunches = 10;
+    private int targetPunches;
     private int currentPunches = 0;
     public GameObject coachDialogBox; // ช่องแสดงคำพูดโค้ช
 
     private Dictionary<Difficulty, int[]> targetPunchTable = new Dictionary<Difficulty, int[]>
 {
-    { Difficulty.Easy,   new int[] { 5, 8, 10 } },
+    { Difficulty.Easy,   new int[] { 5, 10, 15 } },
     { Difficulty.Normal, new int[] { 6, 9, 12 } },
-    { Difficulty.Hard,   new int[] { 8, 10, 14 } }
+    { Difficulty.Hard,   new int[] { 8, 16, 24 } }
 };
 
     private void Start()
     {
         isTrainingEnded = false ;
-        StageLevel currentLevel = StageProgressManager.Instance.GetCurrentStageLevel();
+        StageLevel currentLevel = new StageLevel { stageIndex = 0, difficulty = Difficulty.Easy };
+        if (StageProgressManager.Instance != null)
+             currentLevel = StageProgressManager.Instance.GetCurrentStageLevel();
 
         if (targetPunchTable.TryGetValue(currentLevel.difficulty, out int[] punches))
         {

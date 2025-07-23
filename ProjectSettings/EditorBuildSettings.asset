@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChangeScene/Manu.unity
     guid: f293ade5ae882c441a5f93bca8d4cc80
   - enabled: 1
-    path: Assets/Scenes/ChangeScene/Scene1.unity
+    path: Assets/Scenes/ChangeScene/Hard.unity
     guid: 69bb91ad2334d5849ae817a6d30c2de3
   - enabled: 1
     path: Assets/Scenes/ChangeScene/Manu1.unity

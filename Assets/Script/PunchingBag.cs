@@ -5,6 +5,7 @@ public class PunchingBag : MonoBehaviour // ชื่อของไฟล์ส
     // ฟังก์ชันนี้จะถูกเรียกเมื่อมีวัตถุอื่น "ชน" เข้ากับกระสอบทราย
     // โดยที่ทั้งสองวัตถุต้องมี Collider และอย่างน้อยหนึ่งวัตถุมี Rigidbody
     [SerializeField] private PunchCounter punchCounter;
+    [SerializeField] private Animator animator;
     private void OnTriggerEnter(Collider other)
     {
         // ตรวจสอบว่าวัตถุที่ชนเข้ามานั้นมี Tag ชื่อ "PlayerHand" หรือไม่
@@ -14,6 +15,12 @@ public class PunchingBag : MonoBehaviour // ชื่อของไฟล์ส
             // ถ้าวัตถุที่ชนมี Tag เป็น "PlayerHand"
 
             punchCounter.RegisterPunch();
+
+            if (animator != null)
+            {
+                Debug.Log("play animation hit");
+                animator.SetTrigger("Hit");
+            }
 
             // แสดงข้อความใน Console ของ Unity เพื่อช่วยในการตรวจสอบ (Debug)
             Debug.Log("กระสอบทรายโดนต่อยแล้ว! คะแนนเพิ่ม!");
