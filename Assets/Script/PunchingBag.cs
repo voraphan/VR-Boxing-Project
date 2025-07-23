@@ -4,21 +4,29 @@ public class PunchingBag : MonoBehaviour // ชื่อของไฟล์ส
 {
     // ฟังก์ชันนี้จะถูกเรียกเมื่อมีวัตถุอื่น "ชน" เข้ากับกระสอบทราย
     // โดยที่ทั้งสองวัตถุต้องมี Collider และอย่างน้อยหนึ่งวัตถุมี Rigidbody
-    void OnCollisionEnter(Collision collision)
+    [SerializeField] private PunchCounter punchCounter;
+    [SerializeField] private Animator animator;
+    private void OnTriggerEnter(Collider other)
     {
         // ตรวจสอบว่าวัตถุที่ชนเข้ามานั้นมี Tag ชื่อ "PlayerHand" หรือไม่
         // Tag "PlayerHand" คือสิ่งที่เราตั้งให้กับมือ (PlayerHand) ในขั้นตอนที่ 1
-        if (collision.gameObject.CompareTag("PlayerHand"))
+        if (other.gameObject.CompareTag("PlayerHand"))
         {
             // ถ้าวัตถุที่ชนมี Tag เป็น "PlayerHand"
-            // เราจะเรียกใช้ฟังก์ชัน AddScore ของ ScoreManager
-            // ScoreManager.Instance คือวิธีที่เราเข้าถึง ScoreManager ที่มีอยู่ในฉาก
-            ScoreManager.Instance.AddScore(1); // เพิ่มคะแนน 1 แต้มทุกครั้งที่ต่อยโดน
+
+            punchCounter.RegisterPunch();
+
+            if (animator != null)
+            {
+                Debug.Log("play animation hit");
+                animator.SetTrigger("Hit");
+            }
 
             // แสดงข้อความใน Console ของ Unity เพื่อช่วยในการตรวจสอบ (Debug)
             Debug.Log("กระสอบทรายโดนต่อยแล้ว! คะแนนเพิ่ม!");
         }
     }
+
 
     // หมายเหตุ: ถ้าคุณต้องการให้การชนทำงานแบบ "Trigger" (คือชนแล้วทะลุไปเลย ไม่มีการกระเด้ง)
     // คุณจะต้องตั้งค่า Collider ของ PlayerHand ให้เป็น Is Trigger
